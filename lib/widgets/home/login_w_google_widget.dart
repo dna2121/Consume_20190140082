@@ -1,4 +1,5 @@
 import 'package:consume20190140082/api/google_singin_api.dart';
+import 'package:consume20190140082/widgets/pages/crud_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithGoogleWidget extends StatelessWidget {
@@ -25,6 +26,9 @@ class LoginWithGoogleWidget extends StatelessWidget {
             child: TextButton(
               onPressed: () async {
                 await GoogleSignInApi.login();
+
+                Navigator.of(context)
+                    .push(MaterialPageRoute(builder: (context) => const CrudPage()));
               },
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
