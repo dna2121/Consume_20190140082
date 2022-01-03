@@ -8,6 +8,7 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
+          // color: Colors.red,
           margin: const EdgeInsets.all(40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -37,8 +38,7 @@ class HomePage extends StatelessWidget {
                         decoration: const InputDecoration(
                           labelText: "Email",
                           enabledBorder: UnderlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.deepPurple)),
+                              borderSide: BorderSide(color: Colors.deepPurple)),
                         ),
                       ),
                       const SizedBox(
@@ -48,8 +48,7 @@ class HomePage extends StatelessWidget {
                         decoration: const InputDecoration(
                           labelText: "Password",
                           enabledBorder: UnderlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.deepPurple)),
+                              borderSide: BorderSide(color: Colors.deepPurple)),
                         ),
                       ),
                       const SizedBox(
@@ -72,14 +71,46 @@ class HomePage extends StatelessWidget {
                           ),
                           child: const Text(
                             "Sign In",
-                            style:
-                                TextStyle(color: Colors.white, fontSize: 18),
+                            style: TextStyle(color: Colors.white, fontSize: 18),
                           ),
                         ),
                       ),
                     ],
                   ),
                 ],
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 87),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text(
+                      "— Or —",
+                      style: TextStyle(color: Colors.black26, fontSize: 20),
+                    ),
+                    const SizedBox(height: 23),
+                    Container(
+                      width: double.infinity,
+                      height: 55,
+                      child: TextButton(
+                        onPressed: () {},
+                        style: ButtonStyle(
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(25),
+                                side: BorderSide(color: Colors.grey)),
+                          ),
+                        ),
+                        child: const Text(
+                          "Sign In with Google",
+                          style:
+                              TextStyle(fontSize: 18, color: Colors.deepPurple),
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
             ],
           ),
