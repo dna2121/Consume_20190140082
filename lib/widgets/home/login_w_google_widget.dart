@@ -1,3 +1,4 @@
+import 'package:consume20190140082/api/google_singin_api.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithGoogleWidget extends StatelessWidget {
@@ -22,7 +23,9 @@ class LoginWithGoogleWidget extends StatelessWidget {
             width: double.infinity,
             height: 55,
             child: TextButton(
-              onPressed: () {},
+              onPressed: () async {
+                await GoogleSignInApi.login();
+              },
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                   RoundedRectangleBorder(
