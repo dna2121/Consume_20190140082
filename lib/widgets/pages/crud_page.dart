@@ -17,8 +17,8 @@ class CrudPage extends StatelessWidget {
                 Navigator.of(context).pushReplacement(
                     MaterialPageRoute(builder: (context) => const HomePage()));
               },
-              child: Text(
-                "data",
+              child: const Text(
+                "Logout",
                 style: TextStyle(color: Colors.white),
               ))
         ],
