@@ -27,8 +27,8 @@ class LoginWithGoogleWidget extends StatelessWidget {
               onPressed: () async {
                 await GoogleSignInApi.login();
 
-                Navigator.of(context)
-                    .push(MaterialPageRoute(builder: (context) => const CrudPage()));
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => const CrudPage()));
               },
               style: ButtonStyle(
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(

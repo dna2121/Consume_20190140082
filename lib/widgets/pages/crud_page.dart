@@ -1,3 +1,5 @@
+import 'package:consume20190140082/api/google_singin_api.dart';
+import 'package:consume20190140082/home.dart';
 import 'package:flutter/material.dart';
 
 class CrudPage extends StatelessWidget {
@@ -5,6 +7,25 @@ class CrudPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(
+        actions: [
+          TextButton(
+              onPressed: () async {
+                await GoogleSignInApi.logout();
+
+                Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(builder: (context) => const HomePage()));
+              },
+              child: Text(
+                "data",
+                style: TextStyle(color: Colors.white),
+              ))
+        ],
+      ),
+      body: Container(
+        color: Colors.amber,
+      ),
+    );
   }
 }
