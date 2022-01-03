@@ -8,7 +8,6 @@ class HomePage extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         body: Container(
-          //color: Colors.red,
           margin: const EdgeInsets.all(40),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -16,42 +15,62 @@ class HomePage extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Text(
-                    "Hello,",
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  const SizedBox(
-                    height: 60,
+                  Container(
+                    margin: const EdgeInsets.only(bottom: 60),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          "Hello,",
+                          style: TextStyle(fontSize: 30),
+                        ),
+                        Text(
+                          "Welcome",
+                          style: TextStyle(fontSize: 30),
+                        ),
+                      ],
+                    ),
                   ),
                   TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        labelText: "Name"),
+                    decoration: const InputDecoration(
+                      labelText: "Email",
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.deepPurple)),
+                    ),
                   ),
                   const SizedBox(
                     height: 12,
                   ),
                   TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        labelText: "Email Address"),
+                    decoration: const InputDecoration(
+                      labelText: "Password",
+                      enabledBorder: UnderlineInputBorder(
+                          borderSide: BorderSide(color: Colors.deepPurple)),
+                    ),
                   ),
                   const SizedBox(
-                    height: 12,
+                    height: 33,
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(15),
+                  Container(
+                    width: double.infinity,
+                    height: 55,
+                    child: TextButton(
+                      onPressed: () {},
+                      style: ButtonStyle(
+                        shape:
+                            MaterialStateProperty.all<RoundedRectangleBorder>(
+                          RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25),
+                          ),
                         ),
-                        labelText: "Password"),
-                  ),
-                  const SizedBox(
-                    height: 29,
+                        backgroundColor:
+                            MaterialStateProperty.all<Color>(Colors.deepPurple),
+                      ),
+                      child: const Text(
+                        "Sign In",
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      ),
+                    ),
                   ),
                 ],
               ),
