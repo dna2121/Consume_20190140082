@@ -14,7 +14,18 @@ class Datamahasiswa {
         programstudi = json['programstudi'],
         fakultas = json['fakultas'];
 
-  Datamahasiswa(this.nim, this.nama, this.alamat, this.programstudi, this.fakultas);
+  Datamahasiswa(
+      this.nim, this.nama, this.alamat, this.programstudi, this.fakultas);
+
+  Map toJson() {
+    return {
+      'nim': nim,
+      'nama': nama,
+      'alamat': alamat,
+      'programstudi': programstudi,
+      'fakultas': fakultas
+    };
+  }
 }
 
 // mhsModel mhsModelJson(String str) => mhsModel.fromJson(json.decode(str));

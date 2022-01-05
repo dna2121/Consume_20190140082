@@ -42,18 +42,20 @@ class _PostMethodState extends State<PostMethod> {
   String url = 'http://10.0.2.2:8080/cre';
 
   Future save() async {
-    var res = await http.post(
-      Uri.parse(url),
-      body: json.encode(
-        <String, String>{
-          'nim': data.nim,
-          'nama': data.nama,
-          'alamat': data.alamat,
-          'programstudi': data.programstudi,
-          'fakultas': data.fakultas
-        },
-      ),
-    );
+    var res = await http.post(Uri.parse(url),
+        body: json.encode(
+          <String, dynamic>{
+            'nim': data.nim,
+            'nama': data.nama,
+            'alamat': data.alamat,
+            'programstudi': data.programstudi,
+            'fakultas': data.fakultas
+          },
+        ),
+        headers: {
+          "Accept": "application/json",
+          "content-type": "application/json"
+        });
 
     // headers: {
     //   'Content-Type': 'application/json',
@@ -69,11 +71,7 @@ class _PostMethodState extends State<PostMethod> {
 
     print('Response status: ${res.statusCode}');
     print('Response body: ${res.body}');
-
-    // print(res.body);
-    // if (res.body != null) {
-    //   Navigator.pop(context);
-    // }
+   
   }
 
   Future readData() async {
@@ -142,7 +140,6 @@ class _PostMethodState extends State<PostMethod> {
             ElevatedButton(
                 onPressed: () {
                   readData();
-                
                 },
                 child: const Text("read data"))
           ],
