@@ -1,4 +1,5 @@
 import 'package:consume20190140082/api/google_singin_api.dart';
+import 'package:consume20190140082/api/http_service.dart';
 import 'package:consume20190140082/home.dart';
 import 'package:flutter/material.dart';
 
@@ -23,8 +24,18 @@ class CrudPage extends StatelessWidget {
               ))
         ],
       ),
-      body: Container(
-        color: Colors.amber,
+      body: SingleChildScrollView(
+        child: Column(
+          children: [
+            ElevatedButton(
+              onPressed: () {
+               Datamhs().getData();
+              },
+              child: Text("Get Data Mahasiswa"),
+            ),
+            Text("data")
+          ],
+        ),
       ),
     );
   }

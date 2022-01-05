@@ -2,7 +2,8 @@
     package="id.denis.consume20190140082">
    <application
         android:label="consume20190140082"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/ic_launcher"
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"

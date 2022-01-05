@@ -1,5 +1,5 @@
 import 'package:consume20190140082/api/google_singin_api.dart';
-import 'package:consume20190140082/widgets/pages/crud_page.dart';
+import 'package:consume20190140082/pages/crud_page.dart';
 import 'package:flutter/material.dart';
 
 class LoginWithGoogleWidget extends StatelessWidget {
