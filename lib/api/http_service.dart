@@ -3,7 +3,7 @@
 // // import 'package:http/http.dart' as http;
 // // import 'dart:convert';
 
-import 'package:dio/dio.dart';
+
 
 // void getHttp() async {
 //   try {
@@ -24,22 +24,32 @@ import 'package:dio/dio.dart';
 
 import 'dart:convert';
 import 'dart:io';
+import 'package:http/http.dart' as http;
 
 class Datamhs {
   var client = HttpClient();
 
   Future<void> getData() async {
-    try {
-      HttpClientRequest request = await client.get('localhost', 5000, '/get');
-      // Optionally set up headers...
-      // Optionally write to the request object...
-      HttpClientResponse response = await request.close();
-      // Process the response
-      final stringData = await response.transform(utf8.decoder).join();
-      print(stringData);
-    } finally {
-      client.close();
-    }
+    var url = Uri.parse('https://example.com/whatsit/create');
+    var response = await http.post(url, body: {'name': 'doodle', 'color': 'blue'});
+    print('Response status: ${response.statusCode}');
+    print('Response body: ${response.body}');
+    
+    print(await http.read(Uri.parse('https://example.com/foobar.txt')));
+    
+    // try {
+    //   HttpClientRequest request = await client.get('localhost', 5000, '/get');
+    //   // Optionally set up headers...
+    //   // Optionally write to the request object...
+    //   HttpClientResponse response = await request.close();
+    //   // Process the response
+    //   final stringData = await response.transform(utf8.decoder).join();
+    //   print(stringData);
+    // } finally {
+    //   client.close();
+    // }
+
+
   }
 }
 
