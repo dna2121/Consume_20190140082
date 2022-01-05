@@ -42,8 +42,15 @@ class ListDataMahasiswaPage extends StatelessWidget {
     return ListView.builder(
       itemCount: data.length,
       itemBuilder: (context, index) {
-        return _tile(
-            data[index].nim, data[index].nama, Icons.face_unlock_rounded);
+        return Padding(
+          padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+          child: Card(
+            color: Colors.grey[100],
+            elevation: 3,
+            child: _tile(
+                data[index].nim, data[index].nama, Icons.face_unlock_rounded),
+          ),
+        );
       },
     );
   }

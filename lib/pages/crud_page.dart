@@ -10,6 +10,7 @@ class CrudPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text("List of Data"),
         actions: [
           TextButton(
               onPressed: () async {
