@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'widgets/home/hellowelcome_widget.dart';
-import 'widgets/home/login_form_widget.dart';
-import 'widgets/home/login_w_google_widget.dart';
+import '../widgets/home/hellowelcome_widget.dart';
+import '../widgets/home/login_form_widget.dart';
+import '../widgets/home/login_w_google_widget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+class LoginPage extends StatelessWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

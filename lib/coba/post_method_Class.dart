@@ -1,6 +1,6 @@
 // ignore_for_file: file_names, must_be_immutable
 
-import 'package:consume20190140082/coba/datamahasiswa.dart';
+import 'package:consume20190140082/models/datamahasiswa.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 

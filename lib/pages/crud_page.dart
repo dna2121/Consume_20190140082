@@ -1,6 +1,6 @@
 import 'package:consume20190140082/api/google_singin_api.dart';
-import 'package:consume20190140082/api/http_service.dart';
-import 'package:consume20190140082/home.dart';
+import 'package:consume20190140082/pages/list_data_mahasiswa_page.dart';
+import 'package:consume20190140082/pages/login_page.dart';
 import 'package:flutter/material.dart';
 
 class CrudPage extends StatelessWidget {
@@ -16,7 +16,7 @@ class CrudPage extends StatelessWidget {
                 await GoogleSignInApi.logout();
 
                 Navigator.of(context).pushReplacement(
-                    MaterialPageRoute(builder: (context) => const HomePage()));
+                    MaterialPageRoute(builder: (context) => const LoginPage()));
               },
               child: const Text(
                 "Logout",
@@ -24,19 +24,7 @@ class CrudPage extends StatelessWidget {
               ))
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            ElevatedButton(
-              onPressed: () {
-               Datamhs().getData();
-              },
-              child: Text("Get Data Mahasiswa"),
-            ),
-            Text("data")
-          ],
-        ),
-      ),
+      body: const ListDataMahasiswaPage(),
     );
   }
 }
