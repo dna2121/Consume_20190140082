@@ -1,4 +1,5 @@
 import 'package:consume20190140082/api/google_singin_api.dart';
+import 'package:consume20190140082/pages/add_data.dart';
 import 'package:consume20190140082/pages/list_data_mahasiswa_page.dart';
 import 'package:consume20190140082/pages/login_page.dart';
 import 'package:flutter/material.dart';
@@ -26,6 +27,16 @@ class CrudPage extends StatelessWidget {
         ],
       ),
       body: const ListDataMahasiswaPage(),
+      floatingActionButton: FloatingActionButton(
+        splashColor: Colors.pink,
+        onPressed: () {
+          Navigator.of(context).push(
+            MaterialPageRoute(builder: (context) => const AddDataPage()),
+          );
+        },
+        tooltip: "add",
+        child: const Icon(Icons.add),
+      ),
     );
   }
 }
