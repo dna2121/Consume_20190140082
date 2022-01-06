@@ -1,12 +1,11 @@
 import 'dart:convert';
+import 'package:consume20190140082/pages/add_data.dart';
 import 'package:http/http.dart' as http;
 import 'package:consume20190140082/models/datamahasiswa.dart';
 import 'package:flutter/material.dart';
 
 class ListDataMahasiswaPage extends StatelessWidget {
   const ListDataMahasiswaPage({Key? key}) : super(key: key);
-
-  
 
   @override
   Widget build(BuildContext context) {
@@ -66,6 +65,22 @@ class ListDataMahasiswaPage extends StatelessWidget {
           ),
         ),
         subtitle: Text(subtitle),
+        onTap: () {
+          PopupMenuButton(
+              onSelected: (result) {
+                if (result == 0) {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => AddDataPage()));
+                }
+              },
+              icon: Icon(Icons.delete),
+              itemBuilder: (context) => [
+                    PopupMenuItem(
+                      child: Text("data"),
+                      value: 0,
+                    ),
+                  ]);
+        },
       );
 }
 

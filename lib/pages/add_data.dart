@@ -30,7 +30,7 @@ class _AddDataPageState extends State<AddDataPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("add data mahasiswa"),
+        title: const Text("add or update data mahasiswa"),
       ),
       body: SingleChildScrollView(
         child: Column(
@@ -113,7 +113,7 @@ class _AddDataPageState extends State<AddDataPage> {
             "programstudi": programstudi,
             "fakultas": fakultas,
           };
-          String res = await HttpServiceRequest.postMethod(data);
+          String res = await HttpServiceRequest.putMethod(data);
 
           Navigator.of(context).pop();
           initState();
