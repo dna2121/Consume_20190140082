@@ -1,5 +1,5 @@
 import 'package:consume20190140082/api/google_singin_api.dart';
-import 'package:consume20190140082/pages/add_data.dart';
+import 'package:consume20190140082/pages/delete_page.dart';
 import 'package:consume20190140082/pages/list_data_mahasiswa_page.dart';
 import 'package:consume20190140082/pages/login_page.dart';
 import 'package:consume20190140082/widgets/home/float_addbutton_widget.dart';
@@ -12,7 +12,14 @@ class CrudPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("List of Data"),
+        title: const Center(child: Text("List of Data")),
+        leading: IconButton(
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(builder: (context) => const DeletePage()),
+              );
+            },
+            icon: const Icon(Icons.delete)),
         actions: [
           TextButton(
               onPressed: () async {
@@ -28,7 +35,7 @@ class CrudPage extends StatelessWidget {
         ],
       ),
       body: const ListDataMahasiswaPage(),
-      floatingActionButton: FloatAddButtonWidget(),
+      floatingActionButton: const FloatAddButtonWidget(),
     );
   }
 }
